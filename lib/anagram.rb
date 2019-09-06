@@ -1,17 +1,15 @@
 # Your code goes here!
 require 'pry'
 class Anagram
-
-  attr_accessor :name
+  attr_accessor :word
 
   def initialize(word)
-    @name = word
+    @word = word
   end
 
-  def match(anagrams)
-    binding.pry
-    anagrams.select {|word|
-      word.split(//).sort == @name.split(//).sort
-    }
+  def match(array)
+    array.select do |word| word.split("").sort == @word.split("").sort
+    end
   end
+  
 end
